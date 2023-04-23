@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.*;
 import uniandes.dpoo.taller4.modelo.Tablero;
+import uniandes.dpoo.taller4.modelo.Top10;
 
 
 public class PanelTablero extends JPanel implements ActionListener,MouseListener{	
