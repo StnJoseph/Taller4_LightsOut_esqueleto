@@ -10,8 +10,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.*;
 import uniandes.dpoo.taller4.modelo.Tablero;
-import uniandes.dpoo.taller4.modelo.Top10;
-
 
 public class PanelTablero extends JPanel implements ActionListener,MouseListener{	
 		
@@ -65,9 +63,14 @@ public class PanelTablero extends JPanel implements ActionListener,MouseListener
             cambiarJugadas(); 
             
             if(tableroInit.tableroIluminado() && papa.panelJugadas.getNombre().isEmpty()==false) {
-            	nombre = papa.panelJugadas.getName();
+            	papa.panelJugadas.txtJugador.setEditable(true);            	
+            	nombre = papa.panelJugadas.txtJugador.toString();
             	puntaje = tableroInit.darJugadas(); 
-            	papa.top10.agregarRegistro(papa.panelJugadas.getName(), tableroInit.darJugadas());
+            	
+            	
+            	//System.out.println(papa.panelJugadas.txtJugador.toString());
+            	papa.top10.agregarRegistro(nombre, puntaje);
+            	papa.panelJugadas.txtJugador.setEditable(false);
             }
         }
 	}
